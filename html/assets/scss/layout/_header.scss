@@ -1,0 +1,22 @@
+.header {
+    $self: &;
+
+    &-bar {
+        height: 12.3rem;
+        background: #cce;
+        display: flex;        
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &-logo {
+        background: #f0f;
+        width: 20rem;
+        height: 7rem;
+        
+
+        img {
+            display: none;
+        }
+    }
+}

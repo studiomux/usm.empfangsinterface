@@ -1,0 +1,17 @@
+
+.icon {
+    $root: &;
+
+    &-close {
+        @include ui-icon(cross, 3px, 2.5rem, #fff, 0);
+    }
+
+    &-menu {
+        @include ui-icon(sandwich, 3px, 2.5rem, #fff, 0);
+    }
+
+    &-search {
+        
+    }
+
+}

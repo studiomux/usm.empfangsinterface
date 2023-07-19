@@ -1,0 +1,27 @@
+/*
+This file is used to contain all blocks imports.
+Files inside this folder can contain global styles used in the project.
+*/
+
+
+//Import Blocks files
+@import "swiper/block-swiper"; 
+
+
+
+.block {
+
+    &__content {
+        
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        position: relative;
+
+        > .box-image {
+            flex: 1 0 25%;
+            min-width: 25rem;
+        }
+
+    }
+}

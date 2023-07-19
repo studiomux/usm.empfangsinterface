@@ -1,0 +1,64 @@
+.swiper {
+    $self: &;
+
+    &-slide {
+        overflow: hidden;
+    }
+
+    &-button-prev,
+    &-button-next {
+        min-width: auto;
+        flex: none;
+    }
+    &-button-prev {
+        left: -2rem;
+        &::after {
+            content: "";
+            @include arrow(left, $color-blue, 5px, 2.5rem);
+        }
+    }
+    &-button-next {
+        right: -2rem;
+
+        &::after {
+            content: "";
+            @include arrow(right, $color-blue, 5px, 2.5rem);
+        }
+    }
+
+    &-switch {
+        @media screen and (max-width: 0.75) {
+            background: $color-green;
+        }
+        min-height: 50px;
+
+        > div {
+            height: auto;
+        }
+        @media screen and (min-width: 1100px) {
+            // > div {
+            //     height: 500px;
+            // }
+
+            
+            #{$self} {
+                &-wrapper {
+                    flex-direction: column;
+                    gap: $gap;
+                }
+                &-slide {
+                    flex-shrink: 1;
+                }
+                &-button-prev,
+                &-button-next {
+                    display: none;
+                }
+            }
+        }
+
+        #{$self}-container {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

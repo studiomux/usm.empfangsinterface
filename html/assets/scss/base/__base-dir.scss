@@ -1,0 +1,17 @@
+/*
+This file is used to contain all base imports.
+Files inside this folder can contain global styles used in the project.
+*/
+
+
+//Import Base files
+@import "reset";
+@import "fonts";
+@import "mixins";
+// @import "vars";
+/* Additonal Base Stylesheets */
+
+:root {
+    --breakpoint-800: 800;
+    --breakpoint: 800px;
+}

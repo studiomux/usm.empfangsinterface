@@ -1,0 +1,128 @@
+$mainPadding: 5;
+$gap: 2.0408vw;
+$mainSize: 50-($gap*0.5);
+$gridCells: 5;
+$backgroundGrid: calc(#{$mainSize} / #{$gridCells});
+
+body {
+    touch-action: none;
+    background: #000;
+    display: flex;
+    flex-wrap: wrap;
+    padding: $mainPadding;
+    background-color: #555;
+    justify-content: center;
+    align-content: flex-end;
+    gap: $gap;
+    overflow: hidden;
+}
+
+
+.screen {
+
+    background: #fff;
+    width: $mainSize;
+    height: $mainSize;
+
+    margin-top: 0px;
+
+    // background-image:
+    //     repeating-linear-gradient(#ccc 0 1px, transparent 1px 100%),
+    //     repeating-linear-gradient(90deg, #ccc 0 1px, transparent 1px 100%);
+    // background-size: $backgroundGrid $backgroundGrid;
+
+    .wrapper {
+        // background: rgba($color: #ff0, $alpha: 0.5);
+        height: 100%;
+        position: relative;
+        // transform: rotateZ(90deg);
+    }
+
+    &-left {
+        background: #000;
+    }
+
+    &-right {}
+}
+
+.section {
+    position: relative;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease, visibility 0s linear 0s, height 0s ease;
+    // display: none;
+    background-color: #ffc;
+    
+    &.show {
+        // display: flex;
+        opacity: 1;
+        visibility: visible;
+        height: 100vh;
+        transition-delay: 0s, 0s, 0s;
+    }
+
+    .content {
+        background-color: #ccc;
+        padding: 10vh;
+        position: relative;
+        height: 100vh;
+        width: 100%;
+    }
+
+    &-keyboard {
+        position: relative;
+        padding: 10vh;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+// background-color: #fcf;
+        input {
+            background-color: #f5f5f5;
+            width: 65vh;
+            position: absolute;
+            top: 40vh;
+            left: 50%;
+            box-shadow: inset 0 0 8px 5px rgba(0,0,0, 0.1);
+            padding: 2rem;
+            transform: translateX(-50%);
+            border: 0;
+            border-radius: 20px;
+            font-size: 3rem;
+            caret-color: blue;
+        }
+        .simple-keyboard {
+            // width: 60vh;
+            margin-top: auto;
+            // align-self: flex-end;
+            // position: absolute;
+            // bottom: 0;
+            filter: drop-shadow(5px 5px 5px #00000040);
+
+            &.hg-theme-default .hg-button {
+                height: 80px;
+            }
+        }
+    }
+
+
+    &-video {
+        .video-container {
+            position: absolute;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .video {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            height: 100vh;
+        }
+    }
+}

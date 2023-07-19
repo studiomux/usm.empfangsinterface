@@ -1,0 +1,50 @@
+/*****************************************************************/
+/* Layout */
+
+$gap: 1rem;
+  
+$pageWidth-large: 1366px;
+$pageWidth-medium: 1000px;
+$pageWidth-small: 800px;
+$pageWidth-xsmall: 600px;
+  
+
+$margin_body: 10vw;
+$margin_main: 5vw;
+
+$padding_main: 10rem;
+$padding_main-mobile: 5rem;
+$padding_header: 5rem;
+$padding_header-mobile: 5rem;
+
+$menu-meta--height: 4rem;
+
+$col2: (100 - ($margin_body*2)) / 2 +0vw;
+$col3: (100 - ($margin_body*2)) / 3 +0vw;
+$col4: (100 - ($margin_body*2)) / 4 +0vw;
+
+
+
+
+/*****************************************************************/
+/* ANCHOR Layout */
+
+$gap: 1rem;
+
+$padding_row-narrow--h: 2.7rem;
+$padding_row-narrow--v: 1.7rem;
+
+$padding_row-wide--v: 3.7rem;
+$padding_row-wide--h: 13rem;
+
+$padding_row-full--v: 0;
+$padding_row-full--h: 0;
+
+$column_width-default: 25rem;
+$column_width-full: 38rem;
+
+
+
+/*****************************************************************/
+/* ANCHOR Breakpoints */
+

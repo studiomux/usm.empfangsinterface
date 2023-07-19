@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAEK,AAAD,iBAAW,CAAC;EACR,KAAK,EAAE,IAAI;EACX,OAAO,EAAE,KAAK;CACjB;;AACA,AACG,mBADS,AACR,OAAO,CAAC;EACL,OAAO,EAAE,EAAE;CAEd;;AAGJ,AACG,mBADS,AACR,OAAO,CAAC;EACL,OAAO,EAAE,EAAE;CAEd;;AAGJ,AAAD,aAAO,CAAC;EACJ,UAAU,EAAE,OAAO;CACtB",
+    "sources": [
+        "../swiper/block-swiper.scss"
+    ],
+    "names": [],
+    "file": "block-swiper.css"
+}

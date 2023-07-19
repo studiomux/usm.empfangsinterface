@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/css/index.css">
+    <link rel="stylesheet" href="assets/css/master.min.css">
+</head>
+
+<body>
+    <div class="screen screen-left">
+
+    </div>
+    <div class="screen screen-right">
+        <div class="wrapper">
+            <nav class="menu menu-main">
+                <a href="#" class="nav-link active" data-target="section-start">Start</a>
+                <a href="#" class="nav-link" data-target="section-keyboard">Keyboard</a>
+                <a href="#" class="nav-link" data-target="section-draw">Draw</a>
+                <a href="#" class="nav-link" data-target="section-video">Video</a>
+
+            </nav>
+
+            <section class="section section-start show">
+                <div class="content">
+                    <h1>USM Haller</h1>
+                    <h2>Empfangsinterface</h2>
+                </div>
+            </section>
+            <section class="section section-keyboard">
+                <form>
+                    <input class="input" placeholder="Tap on the virtual keyboard to start" />
+                </form>
+                <div class="simple-keyboard" id="keyboard"></div>
+                <!-- <div class="content">
+                </div> -->
+            </section>
+            <section class="section section-draw">
+
+                <div class="content">
+                    <h1>USM Haller</h1>
+                    <h2>Empfangsinterface</h2>
+                </div>
+                
+                <!-- <div class="content">
+                    <canvas id="canvas" width="800px" height="400px"></canvas>
+                </div> -->
+            </section>
+            <section class="section section-video">
+                <div class="content">
+
+                    <div class="video-container">
+                        <!-- Video Element -->
+                        <video class="video" autoplay mute loop>
+                            <source src="assets/video/dance_-_32938 (Original).mp4" type="video/mp4">
+                            <!-- Fallback-Meldung, falls der Browser das Videoformat nicht unterstützt -->
+                            Dein Browser unterstützt das Videoformat nicht.
+                        </video>
+                    </div>
+                    </video>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="assets/js/menu.js" async defer></script>
+    <script src="assets/js/touchTest.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.js"></script>
+    <script src="assets/js/keyboard.js" async defer></script>
+</body>
+
+</html>

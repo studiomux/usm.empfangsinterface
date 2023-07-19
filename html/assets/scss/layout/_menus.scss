@@ -1,0 +1,19 @@
+.menu {
+    $root: &;
+
+    &-main {
+        $self: &;
+        z-index: 10;
+        position: absolute;
+        top: 10vh;
+        right: 10vh;
+
+        a {
+            &.active {
+                text-decoration: underline;
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,281 @@
+@mixin transition_main{
+    transition: all .15s ease-out;
+}
+
+@mixin transition_slide {
+  transition: all .2s ease-in-out;
+}
+
+
+
+@mixin hover_image{
+    @include transition_main; 
+    box-shadow: 0 0 0 transparent;
+    &:hover{
+        box-shadow: .5rem .5rem 2.5rem rgba(0,0,0,.2);
+        opacity: .8;
+    }
+}
+
+
+@mixin arrow($direction, $color, $lineWidth, $size) {
+
+  @if $direction=='left' {
+    transform: rotate(-135deg);
+  } 
+  @if $direction=='right' {
+    transform: rotate(45deg);
+  }
+  @if $direction=='up' {
+    transform: rotate(-45deg);
+  }
+  @if $direction=='down' {
+    transform: rotate(135deg);
+  }
+  width: $size;
+  height: $size;
+  border-width: $lineWidth $lineWidth 0 0;
+  border-color: $color;
+  border-style: solid; 
+  transition: transform 0.2s ease-in-out;
+}
+
+
+
+@mixin ui-icon($type, $strokeWidth, $iconSize, $color, $borderRadius) {
+    width: $iconSize;
+    height: $iconSize;
+    position: relative;
+    display: block;
+    
+    span {
+      position: absolute;
+      display: block;
+      height: $strokeWidth;
+      transition: all 0.2s ease-in-out;
+    }
+ 
+    @if $type==cross {
+      span {
+        border-radius: $borderRadius;
+ 
+        &:nth-child(1) {
+          transform-origin: 0 50%;
+          background: $color;
+          width: calc(141.421% - #{$strokeWidth});
+          top: $strokeWidth*0.70711*0.5;
+          left: $strokeWidth*0.70711*0.5;
+          transform: translate(0, -50%) rotate(45deg);
+        }
+ 
+        &:nth-child(2) {
+          transform-origin: 100% 50%;
+          width: calc(141.421% - #{$strokeWidth});
+          top: $strokeWidth*0.70711*0.5;
+          right: $strokeWidth*0.70711*0.5;
+          background: $color;
+          transform: translate(0, -50%) rotate(-45deg);
+        }
+ 
+        &:nth-child(3) {
+          transform-origin: 50% 50%;
+          left: 50%;
+          width: $strokeWidth;
+          top: 50%;
+          background: $color;
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+      }
+ 
+      // span
+    }
+ 
+    // .cross
+    @if $type==arrow-down {
+      span {
+        border-radius: $borderRadius;
+ 
+        &:nth-child(1) {
+          transform-origin: 0 50%;
+          background: $color;
+          width: calc(141.421%*0.5);
+          top: $strokeWidth*0.70711*0.5;
+          left: $strokeWidth*0.70711*0.5;
+          transform: translate(0, -50%) rotate(45deg);
+        }
+ 
+        &:nth-child(2) {
+          transform-origin: 100% 50%;
+          width: calc(141.421%*0.5);
+          top: $strokeWidth*0.70711*0.5;
+          right: $strokeWidth*0.70711*0.5;
+          background: $color;
+          transform: translate(0, -50%) rotate(-45deg);
+        }
+ 
+        &:nth-child(3) {
+          transform-origin: 50% 50%;
+          left: 50%;
+          width: $strokeWidth;
+          top: 50%;
+          background: $color;
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+      }
+ 
+      // span
+    }
+ 
+    // .arrow-down
+ 
+    @if $type==arrow-up {
+      span {
+        border-radius: $borderRadius;
+ 
+        &:nth-child(1) {
+          transform-origin: 0 50%;
+          background: $color;
+          width: calc(141.421%*0.5);
+          top: $strokeWidth*0.70711*0.5;
+          left: $strokeWidth*0.70711*0.5;
+          transform: translate(0, -50%) rotate(45deg);
+        }
+ 
+        &:nth-child(2) {
+          transform-origin: 100% 50%;
+          width: calc(141.421%*0.5);
+          top: $strokeWidth*0.70711*0.5;
+          right: $strokeWidth*0.70711*0.5;
+          background: $color;
+          transform: translate(0, -50%) rotate(-45deg);
+        }
+ 
+        &:nth-child(3) {
+          transform-origin: 50% 50%;
+          left: 50%;
+          width: $strokeWidth;
+          top: 50%;
+          background: $color;
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+      }
+ 
+      // span
+    }
+ 
+    // .arrow-up
+ 
+    @if $type==arrow-left {
+      span {
+        border-radius: $borderRadius;
+ 
+        &:nth-child(1) {
+          transform-origin: 100% 50%;
+          background: #00f;
+          width: calc(141.421%*0.5);
+          top: $strokeWidth*0.70711*0.5;
+          left: $iconSize*0.5;
+          transform: translate(0, -50%) rotate(-45deg);
+        }
+ 
+        &:nth-child(2) {
+          transform-origin: 100% 50%;
+          width: calc(141.421%*0.5);
+          top: $iconSize+$strokeWidth*0.70711*-0.5;
+          left: $strokeWidth*0.70711;
+          background: #f00;
+          transform: translate(0, -50%) rotate(45deg);
+        }
+ 
+        &:nth-child(3) {
+          transform-origin: 50% 50%;
+          left: 50%;
+          width: $strokeWidth;
+          top: 50%;
+          background: $color;
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+      }
+ 
+      // span
+    }
+ 
+    // .arrow-left
+ 
+ 
+    @if $type==arrow-right {
+      span {
+        border-radius: $borderRadius;
+ 
+        &:nth-child(1) {
+          transform-origin: 0 50%;
+          background: $color;
+          width: calc(141.421%*0.5);
+          top: $strokeWidth*0.70711*0.5;
+          left: $strokeWidth*0.70711*0.5;
+          transform: translate(0, -50%) rotate(45deg);
+        }
+ 
+        &:nth-child(2) {
+          transform-origin: 0 50%;
+          background: $color;
+          width: calc(141.421%*0.5);
+          top: $iconSize+$strokeWidth*0.70711*-0.5;
+          left: $strokeWidth*0.70711*0.5;
+          transform: translate(0, -50%) rotate(-45deg);
+        }
+ 
+        &:nth-child(3) {
+          transform-origin: 50% 50%;
+          width: $strokeWidth;
+          top: 50%;
+          left: 50%;
+          background: #f00;
+          // display: none;
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+      }
+ 
+      // span
+    }
+ 
+    // .arrow-right
+ 
+    @if $type==sandwich {
+ 
+      //   &.sandwich {
+      span {
+        border-radius: $borderRadius;
+ 
+        &:nth-child(1) {
+          transform-origin: 0 50%;
+          background: $color;
+          width: 100%; // 141,421 %
+          transform: translate(0, 0) rotate(0);
+          left: 0;
+          top: 0;
+        }
+ 
+        &:nth-child(2) {
+          transform-origin: 100% 50%;
+          width: 100%; // 141,421 %
+          right: 0;
+          top: 100%;
+          background: $color;
+          transform: translate(0, -100%) rotate(0);
+        }
+ 
+        &:nth-child(3) {
+          transform-origin: 50% 50%;
+          left: 50%;
+          width: 100%;
+          top: 50%;
+          background: $color;
+          transform: translate(-50%, -50%) rotate(0);
+        }
+      }
+ 
+      // span
+    }
+ 
+  } // ui-icons
