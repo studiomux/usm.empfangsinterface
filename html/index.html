@@ -32,37 +32,33 @@
             <section class="section section-start show">
                 <div class="content">
                     <h1>USM Haller</h1>
-                    <h2>Empfangsinterface</h2>
+                    <h2>Empfangsinterface — Prototyp</h2>
+                    <img src="assets/img/USM_0019369 (Benutzerdefiniert).jpg">
                 </div>
             </section>
             <section class="section section-keyboard">
-                <form>
-                    <input class="input" placeholder="Tap on the virtual keyboard to start" />
-                </form>
-                <div class="simple-keyboard" id="keyboard"></div>
-                <!-- <div class="content">
-                </div> -->
+                <div class="content">
+                    <form>
+                        <input class="input" placeholder="Tap on the virtual keyboard to start" />
+                    </form>
+                    <div class="simple-keyboard" id="keyboard"></div>
+                </div>
             </section>
             <section class="section section-draw">
 
                 <div class="content">
-                    <h1>USM Haller</h1>
-                    <h2>Empfangsinterface</h2>
+                    <div class="draw">
+                        <button class="button button__clear" onclick="clearCanvas()">clear</button>
+                        <canvas class="draw-area" id="canvas" width="1200px" height="800px"></canvas>
+                    </div>
                 </div>
-                
-                <!-- <div class="content">
-                    <canvas id="canvas" width="800px" height="400px"></canvas>
-                </div> -->
             </section>
             <section class="section section-video">
                 <div class="content">
 
                     <div class="video-container">
-                        <!-- Video Element -->
                         <video class="video" autoplay mute loop>
                             <source src="assets/video/dance_-_32938 (Original).mp4" type="video/mp4">
-                            <!-- Fallback-Meldung, falls der Browser das Videoformat nicht unterstützt -->
-                            Dein Browser unterstützt das Videoformat nicht.
                         </video>
                     </div>
                     </video>
@@ -73,7 +69,7 @@
     </div>
 
     <script src="assets/js/menu.js" async defer></script>
-    <script src="assets/js/touchTest.js" async defer></script>
+    <script src="assets/js/draw.js" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.js"></script>
     <script src="assets/js/keyboard.js" async defer></script>
 </body>

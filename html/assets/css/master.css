@@ -90,13 +90,19 @@ select {
 This file is used to contain all component imports.
 Files inside this folder can contain specific element styles and layout. 
 */
+* {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
 body {
   touch-action: none;
   background: #000;
   display: flex;
   flex-wrap: wrap;
   padding: 5;
-  background-color: #555;
   justify-content: center;
   align-content: flex-end;
   gap: 2.0408vw;
@@ -119,37 +125,53 @@ body {
 .section {
   position: relative;
   opacity: 0;
-  visibility: hidden;
   height: 0;
+  visibility: hidden;
   overflow: hidden;
   transition: opacity 0.5s ease, visibility 0s linear 0s, height 0s ease;
-  background-color: #ffc;
 }
 .section.show {
+  height: 100%;
   opacity: 1;
   visibility: visible;
-  height: 100vh;
   transition-delay: 0s, 0s, 0s;
 }
 .section .content {
-  background-color: #ccc;
-  padding: 10vh;
+  height: 100%;
   position: relative;
-  height: 100vh;
-  width: 100%;
 }
-.section-keyboard {
+.section-start .content {
+  padding: 20vh 10vh;
+}
+.section-draw .content {
+  padding: 5%;
   position: relative;
-  padding: 10vh;
-  height: 90vh;
+  text-align: center;
+}
+.section-draw .content .draw {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
+  width: auto;
+  flex-grow: 0;
+}
+.section-draw .content .draw .button {
+  width: 4vh;
+}
+.section-draw .draw-area {
+  margin-top: 2rem;
+  border: 2px solid #000;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  /* mobile webkit */
 }
 .section-keyboard input {
   background-color: #f5f5f5;
-  width: 65vh;
+  width: 40vh;
   position: absolute;
-  top: 40vh;
+  top: 20vh;
   left: 50%;
   box-shadow: inset 0 0 8px 5px rgba(0, 0, 0, 0.1);
   padding: 2rem;
@@ -160,11 +182,17 @@ body {
   caret-color: blue;
 }
 .section-keyboard .simple-keyboard {
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
   margin-top: auto;
+  position: absolute;
+  bottom: 40%;
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2509803922));
 }
 .section-keyboard .simple-keyboard.hg-theme-default .hg-button {
-  height: 80px;
+  height: 4vh;
+  font-size: 80%;
 }
 .section-video .video-container {
   position: absolute;
@@ -214,7 +242,7 @@ h1 {
   font-style: normal;
   font-weight: 400;
   line-height: 1.2em;
-  margin: 0.67em 0;
+  margin: 0 0 0.25em 0;
 }
 
 h2 {
@@ -222,7 +250,7 @@ h2 {
   font-style: normal;
   font-weight: 400;
   line-height: 1.5em;
-  margin-bottom: 0.8em;
+  margin-bottom: 3.5em;
 }
 
 p {
@@ -248,6 +276,26 @@ a {
 }
 a:active {
   text-decoration: underline;
+}
+
+.button {
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  align-items: center;
+  background: #f5f5f5;
+  border-style: solid;
+  border-width: 0;
+  border-bottom: 1px solid #b5b5b5;
+  border-radius: 5px;
+  box-shadow: 0 0 3px -1px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 40px;
+  padding: 5px 10px;
+  font-size: 1.2rem;
+}
+.button:hover {
+  background: #eee;
 }
 
 /* Additonal Blocks Stylesheets *//*# sourceMappingURL=master.css.map */

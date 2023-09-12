@@ -2,12 +2,15 @@
 
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
+
+bgColor = '#f5f5f5';
+
 ctx.strokeStyle = "#222222";
 ctx.lineWith = 2;
 
 ctx.beginPath();
 ctx.rect(0, 0, canvas.width, canvas.height);
-ctx.fillStyle = "#1abc9c";
+ctx.fillStyle = bgColor;
 ctx.fill();
 
 
@@ -17,26 +20,26 @@ ctx.fill();
 
 // Set up mouse events for drawing
 var drawing = false;
-var mousePos = { x:0, y:0 };
+var mousePos = { x: 0, y: 0 };
 var lastPos = mousePos;
 canvas.addEventListener("mousedown", function (e) {
-        drawing = true;
-  lastPos = getMousePos(canvas, e);
+    drawing = true;
+    lastPos = getMousePos(canvas, e);
 }, false);
 canvas.addEventListener("mouseup", function (e) {
-  drawing = false;
+    drawing = false;
 }, false);
 canvas.addEventListener("mousemove", function (e) {
-  mousePos = getMousePos(canvas, e);
+    mousePos = getMousePos(canvas, e);
 }, false);
 
 // Get the position of the mouse relative to the canvas
 function getMousePos(canvasDom, mouseEvent) {
-  var rect = canvasDom.getBoundingClientRect();
-  return {
-    x: mouseEvent.clientX - rect.left,
-    y: mouseEvent.clientY - rect.top
-  };
+    var rect = canvasDom.getBoundingClientRect();
+    return {
+        x: mouseEvent.clientX - rect.left,
+        y: mouseEvent.clientY - rect.top
+    };
 }
 
 
@@ -73,8 +76,11 @@ function renderCanvas() {
 /***************************************************************************/
 /* TOUCH */
 
+// document.addEventListener('contextmenu', event => event.preventDefault());
+
 // Set up touch events for mobile, etc
 canvas.addEventListener("touchstart", function (e) {
+    e.preventDefault(); // Verhindert die Standard-Outline des Canvas
     mousePos = getTouchPos(canvas, e);
     var touch = e.touches[0];
     var mouseEvent = new MouseEvent("mousedown", {
@@ -103,4 +109,15 @@ function getTouchPos(canvasDom, touchEvent) {
         x: touchEvent.touches[0].clientX - rect.left,
         y: touchEvent.touches[0].clientY - rect.top
     };
+}
+
+/***************************************************************************/
+/* Clear Canvas */
+
+function clearCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+    ctx.rect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = bgColor;
+    ctx.fill();
 }
